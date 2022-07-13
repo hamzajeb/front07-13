@@ -1,0 +1,20 @@
+.list-container {
+    width:100%;
+
+ }
+ 
+ .list-container ul {
+    display:flex;
+
+    justify-content:space-between;
+    list-style:none;
+ }
+ 
+ .list-container li {
+    flex:0 0 end;
+
+ }
+ 
+ ul {
+    padding:0;
+ }

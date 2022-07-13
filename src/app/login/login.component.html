@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<br>
+
+<mat-grid-list cols="2" rowHeight="1:1" [gutterSize]="'20px'" >
+    <mat-grid-tile style="box-shadow: 0 8px 16px #dce1e1;border-radius: 15px;">
+    </mat-grid-tile>
+    <mat-grid-tile style="box-shadow: 0 8px 16px #dce1e1;border-radius: 15px;">
+        <form  [formGroup]="form" (ngSubmit)="loginFormData()">
+        <div style="font-family: 'Oleo Script Swash Caps', cursive;font-size: 30px;text-align: center;">Connexion</div>
+        <br>
+        <br>
+        <div>
+            <p *ngIf="message!=null" style="font-weight: bold;color: red;">{{message}}</p>
+            <mat-form-field appearance="fill" style="width: 20vw">
+                <mat-label >Username</mat-label>
+                <input type="text" formControlName="username" name="username"matInput placeholder="Placeholder" >
+                <mat-icon matSuffix>account_circle</mat-icon>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field appearance="fill" style="width: 20vw;">
+                <mat-label>Mot de Passe</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" name="password" type="password" formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>
+        <br>
+        <button mat-raised-button color="dark" style="width: 20vw;font-weight: bold;" type="submit" >Connexion</button>
+        </form>
+    </mat-grid-tile>
+  </mat-grid-list>

@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button >
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <span style="margin-right: 65%;">APP STM</span>
+
+        <div class="list-container">
+            <ul >
+                <li>
+                    <button mat-button  [routerLink]="['/login']" *ngIf="testconnexion()==false">
+                        <mat-icon>person_outline</mat-icon>
+                    </button>
+                    <button mat-button (click)="Logout()" *ngIf="testconnexion()==true"  style="font-size:30px;font-family: 'Oleo Script Swash Caps', cursive ;">
+                        <mat-icon>exit_to_app</mat-icon>
+                    </button>
+
+                </li>
+                <li>
+                    <button mat-icon-button [routerLink]="['/employe']">
+                        <mat-icon>assignment_ind</mat-icon>
+                    </button>
+                </li>
+                <li>
+                    <button mat-icon-button [routerLink]="['/dashboard']">
+                        <mat-icon>dashboard</mat-icon>
+                    </button>
+                </li>
+                <li>
+                    <button mat-icon-button>
+                        <mat-icon>help_outline</mat-icon>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
